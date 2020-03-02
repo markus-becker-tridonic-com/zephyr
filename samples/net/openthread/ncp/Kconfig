@@ -1,0 +1,15 @@
+# Config options for OpenThread Border Router sample app
+
+# Copyright (c) 2020 Tridonic GmbH & Co KG
+# SPDX-License-Identifier: Apache-2.0
+
+mainmenu "OpenThread Border Router"
+
+menu "Application configuration"
+
+config APPLICATION_VERSION
+	string "Version number for the application"
+
+endmenu
+
+source "Kconfig.zephyr"

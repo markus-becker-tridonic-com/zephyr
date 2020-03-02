@@ -201,6 +201,67 @@ config OPENTHREAD_DHCP6_SERVER
 	help
 	  Enable DHCPv6 server capability in OpenThread stack
 
+config OPENTHREAD_SLAAC
+	bool "SLAAC support"
+	help
+	  Enable SLAAC capability in OpenThread stack
+
+config OPENTHREAD_ENABLE_SERVICE
+	bool "Service support"
+	help
+	  Enable service capability in OpenThread stack
+
+config OPENTHREAD_RAW
+	bool "Raw Link support"
+	help
+	  Enable raw link support in OpenThread stack
+
+config OPENTHREAD_BORDER_AGENT
+	bool "Border Agent support"
+	help
+	  Enable border agent support in OpenThread stack
+
+config OPENTHREAD_BORDER_ROUTER
+	bool "Border Router support"
+	help
+	  Enable border router support in OpenThread stack
+
+config OPENTHREAD_NCP
+	bool "Network Co-Processor"
+	help
+	  Enable NCP in OpenThread stack
+
+config OPENTHREAD_NCP_RADIO
+	bool "Network Co-Processor as Radio"
+	help
+	  Enable NCP in OpenThread stack as radio-only
+	depends on OPENTHREAD_NCP
+
+config OPENTHREAD_NCP_SPINEL_ON_UART_DEV_NAME
+	string "UART device to use for NCP SPINEL"
+	default "UART_0"
+	help
+	  UART device to use for NCP SPINEL
+	depends on OPENTHREAD_NCP
+
+config OPENTHREAD_NCP_UART_TX_RING_BUFFER_SIZE
+	int "Set NCP UART TX ring buffer size"
+	default 4096
+	depends on OPENTHREAD_NCP
+	help
+	  TX buffer size for the OpenThread NCP UART
+
+config OPENTHREAD_NCP_SPINEL_ON_UART_ACM
+	bool "Run SPINEL over USB-ACM"
+	help
+	  Is the SPINEL device a USB-CDC-ACM device
+	depends on OPENTHREAD_NCP && USB_CDC_ACM
+
+config OPENTHREAD_UDP_FORWARD
+	bool "UDP forward support"
+	help
+	  Enable UDP forward support in OpenThread stack
+
 config OPENTHREAD_PLATFORM_INFO
 	string "Platform information for OpenThread"
 	default "ZEPHYR"
